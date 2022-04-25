@@ -19,4 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('snippets.urls')),
+
+    path('api-auth/', include('rest_framework.urls')), # to include the login and logout views for the browsable API (появляется log in вверху)
 ]
