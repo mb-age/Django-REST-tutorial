@@ -20,7 +20,7 @@ class Snippet(models.Model):
     language = models.CharField(choices=LANGUAGE_CHOICES, default='python', max_length=100)
     style = models.CharField(choices=STYLE_CHOICES, default='friendly', max_length=100)
 
-    owner = models.ForeignKey('auth.User', related_name='snippets', on_delete=models.CASCADE)
+    owner = models.ForeignKey('auth.User', related_name='snippets', on_delete=models.CASCADE) # related_name - имя relacji (там где в конце добавлялось _set, но тут оно переопределено
     highlighted = models.TextField()
 
     class Meta:
